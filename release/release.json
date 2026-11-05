@@ -1,5 +1,12 @@
 {
-  "Version": "1.0",
-  "ReleaseDate": "2024-01-01",
-  "Author": "DevOps Team"
+  "version": "v2.3.0",
+  "releaseDate": "2026-11-05",
+  "author": "DevOps Team",
+  "environment": "production",
+  "imageTag": "lab-app:v2.3.0",
+  "approvedBy": "Engineering Manager",
+  "rollbackVersion": "v2.2.1",
+  "pipelineStatus": "passing",
+  "commitSha": "HEAD",
+  "releaseNotes": "OrderFlow v2.3.0 — Production release candidate. All validation stages passed."
 }

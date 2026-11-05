@@ -1,2 +1,19 @@
-rollback_strategy: 
-target_version: 
+rollback_strategy: immediate-revert
+target_version: v2.2.1
+steps:
+  - step: 1
+    action: "Trigger rollback pipeline in GitHub Actions"
+    command: "gh workflow run rollback.yml -f version=v2.2.1"
+  - step: 2
+    action: "Re-deploy previous stable image"
+    command: "kubectl set image deployment/lab-app lab-app=lab-app:v2.2.1"
+  - step: 3
+    action: "Verify pod health after rollback"
+    command: "kubectl rollout status deployment/lab-app"
+  - step: 4
+    action: "Confirm service health endpoint responds"
+    command: "curl -f https://app.orderflow.io/health"
+  - step: 5
+    action: "Notify stakeholders of rollback via Slack/email"
+rollback_owner: DevOps Lead
+max_rollback_time_minutes: 15

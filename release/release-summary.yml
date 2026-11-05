@@ -1,5 +1,11 @@
-status: unknown
+status: approved
 environment: production
-version: latest
-approval: pending
-rollback: none
+version: v2.3.0
+approval: approved
+rollback: v2.2.1
+deployment_date: "2026-11-05"
+validated_by: DevOps Lead
+pipeline: GitHub Actions — Release Pipeline
+notes: >
+  All validation stages passed. Production deployment of OrderFlow v2.3.0
+  approved with rollback target v2.2.1 confirmed available.

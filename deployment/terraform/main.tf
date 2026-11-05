@@ -4,9 +4,11 @@ provider "aws" {
 
 resource "aws_instance" "app_server" {
   ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = "t2.micro"
+  instance_type = "t3.medium"
 
   tags = {
-    Name = "LabAppServer"
+    Name        = "OrderFlow-v2.3.0-AppServer"
+    Environment = "production"
+    Release     = "v2.3.0"
   }
 }
